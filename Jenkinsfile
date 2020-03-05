@@ -1,4 +1,7 @@
 pipeline {
+  agent {
+    label 'kubegit'
+  }
   parameters {
     string(name: 'CARTS_ENV', defaultValue: 'production', description: 'The environment of carts to generate load for.', trim: true)
   }
