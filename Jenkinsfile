@@ -15,7 +15,7 @@ pipeline {
         }
         container("curl") {
           sh "echo ${env.CARTS_IP}"
-          sh "while true; do curl -X POST -H \"Content-Type: application/json\" -d \"{\"id\":\"3395a43e-2d88-40de-b95f-e00e1502085b\", \"itemId\":\"03fef6ac-1896-4ce8-bd69-b798f85c6e0b\"}\" http://${env.CARTS_IP}/carts/1/items && sleep 0.1; done"
+          sh 'while true; do curl -X POST -H "Content-Type: application/json" -d \"{"id":"3395a43e-2d88-40de-b95f-e00e1502085b", "itemId":"03fef6ac-1896-4ce8-bd69-b798f85c6e0b"}\" http://${env.CARTS_IP}/carts/1/items && sleep 0.1; done'
         }
       }
     }
